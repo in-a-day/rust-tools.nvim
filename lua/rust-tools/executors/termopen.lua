@@ -28,8 +28,16 @@ function M.execute_command(command, args, cwd)
     latest_buf_id,
     "n",
     "<Esc>",
-    ":q<CR>",
-    { noremap = true }
+    "<cmd>q<CR>",
+    { noremap = true, silent = true }
+  )
+
+  vim.api.nvim_buf_set_keymap(
+    latest_buf_id,
+    "n",
+    "q",
+    "<cmd>q<CR>",
+    { noremap = true, silent = true }
   )
 
   -- run the command
